@@ -1,0 +1,91 @@
+
+@media all and (max-width:567px){
+    .nav-item {
+        text-align: center;
+        margin: 15px 0;
+    }
+    .icons{
+        justify-content: center;
+        margin: 15px ;
+    }
+    .badge {
+        top: 1px !important;
+        right: 10.3rem !important;
+    }
+    .wish{
+        margin-left: 12rem !important;
+    }
+    .wishbadge{
+        right: 7.6rem !important;
+        
+    }
+}
+@media all and (min-width:577px) and (max-width:768px){
+
+    .nav-item {
+        text-align: center;
+        margin: 15px 0;
+    }
+    .icons{
+        justify-content: center;
+        margin: 15px ;
+    }
+    .badge {
+        top: 1px !important;
+        right: 14rem !important;
+    }
+    .wish{
+        margin-left: 15rem !important;
+    }
+    .wishbadge{
+        right: 10.7rem !important;
+        
+    }
+}
+
+@media all and (min-width:769px) and (max-width:992px){
+    .nav-item {
+        text-align: center;
+        margin: 15px 0;
+    }
+    .icons{
+        justify-content: center;
+        margin: 15px ;
+    }
+   
+    .badge {
+        top: 1px !important;
+        right: 19rem !important;
+    }
+    .wish{
+        margin-left: 21rem !important;
+    }
+    .wishbadge{
+        right: 15.7rem !important;
+        
+    }
+
+}
+   
+    
+        
+    
+
+
+
+
+
+
+
+// ////////////////
+nav{
+    transition: all 1s;
+}
+
+.badge{
+    top: 2px;
+    right: -8px;
+}
+.navbar{
+    z-index: 666787;
+}

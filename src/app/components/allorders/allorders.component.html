@@ -1,0 +1,35 @@
+<section class="bg-main-light rounded p-4 shadow w-75 m-auto ">
+
+    <div *ngFor="let item of allOrders" class="row my-2 ">
+        <div class="col-md-8">
+            <div *ngFor="let cartitem of item.cartItems" class="row ">
+                <div class="col-md-4">
+                    <img [src]="cartitem.product.imageCover" class="w-100 my-2" [alt]="cartitem.product.title">
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                    <div>
+                        <h2 class="h5 text-main">{{cartitem.product.title}}</h2>
+                        <p>count : {{cartitem.count}}</p>
+                        <p>price : <span class="text-main">{{cartitem.price |currency:'EGP'}}</span></p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 d-flex align-items-center">
+            <div class="border py-4 px-5 rounded">
+                <p>Is Deliverd : <span class="text-white px-2 py-1 fw-semibold rounded"
+                        [ngClass]="{'bg-danger':item.isDelivered==false,'bg-success':item.isDelivered==true}">{{item.isDelivered}}</span>
+                </p>
+                <p>Is Paid : <span class="text-white px-2 py-1 fw-semibold rounded"
+                        [ngClass]="{'bg-danger':item.isPaid==false,'bg-success':item.isPaid==true}">{{item.isPaid}}</span>
+                </p>
+                <p>Payment Method : <span class="fw-bold">{{item.paymentMethodType}}</span></p>
+                <p class="mb-0">Total Price : <span class="fw-bold">{{item.totalOrderPrice |currency:'EGP'}}</span></p>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,16 @@
+<section>
+
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+          
+            <div *ngFor="let brand of allBrands" class="col-lg-3 col-md-4 col-sm-6 ">
+                <div class="border shadow my-3">
+                    <img class="w-100" [src]="brand.image" [alt]="brand.name">
+                    <h4 class="h5 text-main ms-1">{{brand.name}}</h4>
+                </div>
+                
+            </div>
+          
+        </div>
+    </div>
+</section>

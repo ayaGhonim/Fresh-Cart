@@ -1,0 +1,13 @@
+<section *ngIf="categoryData.length!=0;else nothing">
+    <div class=" m-4">
+        <div class="row g-4 d-flex justify-content-center">
+             <div   *ngFor="let item of categoryData" class="col-sm-6 col-xl-3 col-md-4  ">
+                <div [routerLink]="[item._id+'/subcategories']" role="button" class="border  rounded shadow"><img class="w-100 rounded" height="430" [src]="item.image" [alt]="item.name"></div>
+                <div role="button"  [routerLink]="['/categoryDetails',item._id]"><h3 class="text-center text-main mt-2 ">{{item.name}}</h3></div>
+             </div>
+        </div>
+    </div>
+</section>
+<ng-template #nothing>
+    <p class="alert alert-danger text-center mt-5 py-3">No Subcategories In This Category.</p>
+</ng-template>

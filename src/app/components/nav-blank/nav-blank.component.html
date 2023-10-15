@@ -1,0 +1,68 @@
+<nav #navBar class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+      <a class="navbar-brand " routerLink="/"><img src="./assets/imgs/freshcart-logo.svg" alt="fresh cart"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-link" routerLink="/home">Home</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-link"  routerLink="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-link" routerLink="/categories">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-link"  routerLink="/brands">Brands</a>
+          </li>
+        
+        </ul>
+<ul  class="navbar-nav m-auto mb-2 mb-lg-0">
+  <li class="nav-item me-3">
+    <a class="nav-link  text-main position-relative"  routerLink="/cart"><i class="fas fa-shopping-cart fa-2x "></i>
+      <span class="badge  bg-main position-absolute top-0 end-0">{{cartNum}}</span></a>
+    
+  </li>
+  <li class=" nav-item me-3">
+   <a routerLink="/wishlist" class=" wish nav-link d-flex align-items-center me-5 ms-3 mb-1 position-relative">
+    <i class="fa-solid fa-heart text-main fs-2 "></i>
+    <span class="badge wishbadge bg-main position-absolute ">{{wishNum}}</span>
+   </a>
+  </li>
+</ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">    
+          <div class=" align-items-center  d-lg-flex ">
+            <li class="nav-item d-flex gap-3 me-lg-5  align-items-center cursor-pointer icons ">
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-tiktok"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+          </li>
+          
+        
+          <li class="nav-item ms-lg-2  ">
+              <span (click)="signOut()" role="button" class="fw-bold">Sign Out</span>
+          </li>
+          <li class="nav-item dropdown ms-2">
+            <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <i class="fas fa-user"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li routerLink="/forgetpassword"><a class="dropdown-item bg-secondary bg-opacity-10 cursor-pointer text-center" >forget password</a></li>
+          
+            </ul>
+          </li>
+          </div>
+            
+          
+          </ul>
+       
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,10 @@
+<section *ngIf="subCategory"  class=" my-5">
+    <h1 class="text-center text-main my-5">* Sub Categories *</h1>
+    <div class="row g-4 d-flex justify-content-center">
+        <div role="button" *ngFor="let item of  subCategory" class="col-md-4 shadow rounded text-center py-5 ms-3 bg-main-light">
+            <h4 class="text-main">{{item.name}}</h4>   
+        </div>
+    </div>
+    
+</section>
+  

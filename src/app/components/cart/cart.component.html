@@ -1,0 +1,40 @@
+
+<section *ngIf="cartDetails.products;else cart" class="bg-main-light rounded p-4 shadow w-75 m-auto ">
+   <div class="d-flex justify-content-between align-items-center">
+    <h1>Shop Cart :</h1>
+    <button (click)="clear()" class="btn btn-outline-danger fw-semibold ">Clear Cart
+        <span *ngIf="isLoading"><i class="fas fa-spin fa-spinner"></i></span>
+    </button>
+   </div>
+
+    <p>Total Price : <span class="text-main ms-2">{{cartDetails.totalCartPrice|currency:'EGP'}}</span></p>
+    <div *ngFor="let product of cartDetails.products" class="row my-2 border py-1">
+        <div class="col-lg-2 col-md-4">
+            <img class="w-100" [src]="product.product.imageCover" [alt]="product.product.title">
+        </div>
+        <div class="col-lg-10 col-md-8   d-flex justify-content-between align-items-center">
+            <div >
+                <h2 class="h5 ">{{product.product.title}}</h2>
+                <p class="   small mt-1">Price : <span class="text-main">{{product.price |currency:'EGP'}}</span></p>
+                <button #remove (click)="removeItem(product.product._id,remove)" class="d-block btn m-0 py-2 px-3  text-danger fw-semibold border-0"><i class="fa-solid fa-trash me-1"></i>
+                    Remove</button>
+            </div>
+            <div class="d-flex ">
+                <button #plus (click)="changeCount(product.count+1,product.product._id,plus,minus)" class="main-btn"><i class="fa-solid fa-plus"></i></button>
+                <h6 class="main-text fw-bold mx-2 mt-1 ">{{product.count}}</h6>
+                <button #minus (click)="changeCount(product.count-1,product.product._id,minus,plus)" class="main-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+
+   <div class="d-flex justify-content-center align-items-center">
+    <button [routerLink]="['/payment',cartDetails._id]" class="main-btn mt-3 fw-semibold">Online Payment <img src="../../../assets/imgs/visa-1.svg" alt="visa"></button>
+   </div>
+
+</section>
+
+<ng-template #cart>
+    <h2 class="text-center mt-5">Your Cart Is Empty ... </h2>
+</ng-template>

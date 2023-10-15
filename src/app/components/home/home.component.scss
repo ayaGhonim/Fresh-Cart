@@ -1,0 +1,20 @@
+.product div img{
+    transition: all 1s;
+  }
+  
+  .col-md-2:hover .product div img{
+    transform: scale(1.2);
+  
+  }
+
+  .button:disabled{
+    background-color: #067a065b !important;
+    color: #ffffff8e !important;
+    cursor: not-allowed;
+  }
+  @media all and (max-width:575px){
+   .form-control{
+    width: 95% !important;
+    margin: auto !important;
+   }
+}
